@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
+            rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Cart</title>
+    <style>
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #212529;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #spinner {
+            margin-top: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="stretched dark">
+<div id="overlay">
+    <div id="spinner">
+        <img src="images/spinner.gif" alt="loader">
+    </div>
+</div>
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper">
+
+<!-- Header
+============================================= -->
+    <header id="header" class="full-header">
+        <div id="header-wrap">
+            <div class="container">
+                <div class="header-row">
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="catalogue" class="standard-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                        <a href="catalogue" class="retina-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- <div class="header-misc">
+                        <div id="top-cart" class="header-misc-icon d-none d-sm-block">
+                            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span
+                                    class="top-cart-number">5</span></a>
+                        </div>#top-cart end
+                    </div> -->
+
+                    <div id="primary-menu-trigger">
+                        <svg class="svg-trigger" viewBox="0 0 100 100">
+                            <path
+                                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+                            </path>
+                            <path d="m 30,50 h 40"></path>
+                            <path
+                                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav class="primary-menu">
+                        <ul class="menu-container">
+                            <!-- <li class="menu-item">
+                                <a href="cart.html" id="top-cart-trigger"><i class="icon-line-bag"></i></a>
+                            </li> -->
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="promocodes">
+                                    <div>Coupons</div>
+                                </a>
+                            </li>
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="cart">
+                                    <div>Cart</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="catalogue">
+                                    <div>Catalogue</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="logout" class="button button-rounded si-twitter si-colored">Log
+                                    Out</a>
+                            </li>
+                        </ul>
+                    </nav><!-- #primary-menu end -->
+                </div>
+            </div>
+        </div>
+        <div class="header-wrap-clone"></div>
+    </header><!-- #header end -->
+
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Your Cart</h1>
+        </div>
+    </section><!-- #page-title end -->
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container">
+
+                <table class="table cart mb-5">
+                    <thead>
+                    <tr>
+                        <th class="cart-product-remove">&nbsp;</th>
+                        <th class="cart-product-thumbnail">&nbsp;</th>
+                        <th class="cart-product-name">Product</th>
+                        <th class="cart-product-price">Unit Price</th>
+                        <th class="cart-product-quantity">Quantity</th>
+                        <th class="cart-product-subtotal">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody id="main-table">
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section><!-- #content end -->
+    <!-- <div class="overlay">
+        <div class="overlay__inner">
+            <div class="overlay__content"><span class="spinner"></span></div>
+        </div>
+    </div> -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+        <!-- Copyrights
+        ============================================= -->
+        <div id="copyrights">
+            <div class="container">
+                <div class="row col-mb-30">
+                    <div class="col-md-6 text-center text-md-start">
+                        Copyrights &copy; 2021 All Rights Reserved.<br>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="clear"></div>
+                        <i>From the creator of Netflix.</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- JavaScripts
+============================================= -->
+<script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    function func(pr) {
+        on();
+        let prod = document.getElementById(pr);
+        prod.remove();
+    }
+
+    function total(subs, tot) {
+        let sub = document.getElementById(subs);
+        let sum = document.getElementById(tot);
+        sum.innerText = sub.innerText;
+    }
+
+    function setContent(data) {
+        let main_table = $('#main-table');
+        $('#main-table tr').remove();
+        for (item of data["product_list"]) {
+            let item_id = item.id.toString();
+            main_table.append("<tr class=\"cart_item\" id=\"tr_" + item_id + "\">\n" +
+                "    <td class=\"cart-product-remove\" onclick='deleteElement(" + item_id + ")'\">" +
+                "       <a class=\"remove\" title=\"Remove this item\"><i\n" +
+                "            class=\"icon-trash2\"></i></a></td>\n" +
+                "\n" +
+                "    <td class=\"cart-product-thumbnail\">\n" +
+                "        <a><img width=\"64\" height=\"64\" src=\"" + item.image + "\"\n" +
+                "                alt=\"Pink Printed Dress\"></a>\n" +
+                "    </td>\n" +
+                "\n" +
+                "    <td class=\"cart-product-name\">\n" +
+                "        <a>" + item.title + "</a>\n" +
+                "    </td>\n" +
+                "\n" +
+                "    <td class=\"cart-product-price\">\n" +
+                "        <span class=\"amount\" id=\"price_`${parsed_item.id}`\">NIS " + item.price + "</span>\n" +
+                "    </td>\n" +
+                "\n" +
+                "    <td class=\"cart-product-quantity\">\n" +
+                "        <div class=\"quantity\">\n" +
+                "            <input type=\"button\" value=\"-\" class=\"minus\"\n" +
+                "                   onclick=\"calc(" + item_id + ", true)\">\n" +
+                "            <input type=\"text\" name=\"quantity\" value=\"" + item.amount + "\" class=\"qty\" id='quantity-" + item_id + "' readonly/>\n" +
+                "            <input type=\"button\" value=\"+\" class=\"plus\"\n" +
+                "                   onclick=\"calc(" + item_id + ")\">\n" +
+                "        </div>\n" +
+                "    </td>\n" +
+                "\n" +
+                "    <td class=\"cart-product-subtotal\" id=\"sub-total" + item_id + "\">\n" +
+                "        <span class=\"amount\">NIS " + item.total_price + "</span>\n" +
+                "    </td>\n" +
+                "</tr>");
+        }
+        main_table.append("<tr class=\"cart_item\" id=\"cart-layout\">\n" +
+            "                        <td colspan=\"6\">\n" +
+            "                            <div class=\"row justify-content-between py-2 col-mb-30\">\n" +
+            "                                <div class=\"col-lg-auto ps-lg-0\">\n" +
+            "                                    <div class=\"row\">\n" +
+            "                                        <div class=\"col-md-8\"></div>\n" +
+            "                                        <div class=\"table-responsive\">\n" +
+            "                                            <table class=\"table cart cart-totals\">\n" +
+            "                                                <tbody>\n" +
+            "                                                <tr class=\"cart_item\">\n" +
+            "                                                    <td class=\"cart-product-name\">\n" +
+            "                                                        <strong>Total</strong>\n" +
+            "                                                    </td>\n" +
+            "\n" +
+            "                                                    <td class=\"cart-product-name\">\n" +
+            "<span class=\"amount color lead\"\n" +
+            "                                                                          id=\"total\"><strong>NIS " + data.total_price + "</strong></span>\n" +
+            "                                                    </td>\n" +
+            "                                                </tr>\n" +
+            "                                                </tbody>\n" +
+            "                                            </table>\n" +
+            "                                        </div>\n" +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                                <div class=\"col-lg-auto pe-lg-0\" id=\"check-outer\">\n" +
+            "                                    <a onclick=\"createOrder()\"\n" +
+            "                                       class=\"button button-3d mt-2 mt-sm-0 me-0\">Proceed to\n" +
+            "                                        Checkout</a>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                    </tr>");
+    }
+
+    function calc(item_id, boo = false) {
+        // - = TRUE
+        on();
+        let quantity = parseInt(document.getElementById("quantity-" + item_id.toString()).value);
+        if (boo) {
+            quantity--;
+            if (quantity === 0) {
+                off();
+                return;
+            }
+        } else {
+            quantity++;
+        }
+        $.ajax({
+            type: "PUT",
+            dataType: 'json',
+            crossDomain: true,
+            url: "cartItem?item_id=" + item_id + "&amount=" + quantity,
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                setContent(data);
+            }
+        });
+        off();
+    }
+
+    function deleteElement(item_id) {
+        on();
+        $.ajax({
+            type: "DELETE",
+            dataType: 'json',
+            crossDomain: true,
+            url: "cartItem?item_id=" + item_id,
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                setContent(data);
+            }
+        });
+        off();
+    }
+
+    function createOrder() {
+        on();
+        $.ajax({
+            type: "POST",
+            dataType: 'json',
+            crossDomain: true,
+            url: "order",
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                window.location.href = "https://t.me/lytelolibot?start=" + data.id;
+            },
+            error: function (error) {
+                off();
+            }
+        });
+    }
+</script>
+<script>
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            crossDomain: true,
+            url: "cartItem",
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                setContent(data);
+            }
+        });
+    });
+</script>
+<script src="js/plugins.min.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="js/functions.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

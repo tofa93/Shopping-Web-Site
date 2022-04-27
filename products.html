@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
+            rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="js/jquery.js"></script>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Shopping</title>
+</head>
+
+<body class="stretched dark">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+<!-- Header
+============================================= -->
+    <header id="header" class="full-header">
+        <div id="header-wrap">
+            <div class="container">
+                <div class="header-row">
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="catalogue" class="standard-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                        <a href="catalogue" class="retina-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- <div class="header-misc">
+                        <div id="top-cart" class="header-misc-icon d-none d-sm-block">
+                            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span
+                                    class="top-cart-number">5</span></a>
+                        </div>#top-cart end
+                    </div> -->
+
+                    <div id="primary-menu-trigger">
+                        <svg class="svg-trigger" viewBox="0 0 100 100">
+                            <path
+                                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+                            </path>
+                            <path d="m 30,50 h 40"></path>
+                            <path
+                                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav class="primary-menu">
+                        <ul class="menu-container">
+                            <!-- <li class="menu-item">
+                                <a href="cart.html" id="top-cart-trigger"><i class="icon-line-bag"></i></a>
+                            </li> -->
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="promocodes">
+                                    <div>Coupons</div>
+                                </a>
+                            </li>
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="cart">
+                                    <div>Cart</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="catalogue">
+                                    <div>Catalogue</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="logout" class="button button-rounded si-twitter si-colored">Log
+                                    Out</a>
+                            </li>
+                        </ul>
+                    </nav><!-- #primary-menu end -->
+                </div>
+            </div>
+        </div>
+        <div class="header-wrap-clone"></div>
+    </header><!-- #header end -->
+
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Our Store</h1>
+        </div>
+    </section>
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div id="shop" class="shop row grid-container gutter-30" data-layout="fitRows">
+                    {0}
+                </div><!-- #shop end -->
+            </div>
+        </div>
+    </section><!-- #content end -->
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+        <!-- Copyrights
+        ============================================= -->
+        <div id="copyrights">
+            <div class="container">
+                <div class="row col-mb-30">
+                    <div class="col-md-6 text-center text-md-start">
+                        Copyrights &copy; 2021 All Rights Reserved.<br>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="clear"></div>
+                        <i>From the creator of Netflix.</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- JavaScripts
+============================================= -->
+
+<script type="text/javascript">
+    if (typeof selectedItem === 'undefined' || selectedItem === null) {{
+        let selectedItem;
+    }}
+
+    function setSelectedItem(id) {{
+        selectedItem = id;
+    }}
+
+    function getParameterByName(name, url = window.location.href) {{
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }}
+
+    // $(window).load(function () {{
+    //     let category = getParameterByName('category');
+    //     if (!category) {{
+    //         window.location.href = '/';
+    //     }}
+    //     while (true) {{
+    //         try {{
+    //             $.ajax({{
+    //                 type: "GET",
+    //                 dataType: 'json',
+    //                 crossDomain: true,
+    //                 url: "https://test.lyteloli.space/getProducts?category=" + category,
+    //                 async: false,
+    //                 contentType: "application/json; charset=utf-8",
+    //                 success: function (data) {{
+    //                     console.log(data);
+    //                     if (!data.error) {{
+    //                         for (item of data.item_list) {{
+    //                             let admin_btn = `<a class="sale-flash badge bg-secondary p-2" href="adminProduct?product_id=${{item.id}}" style="display: block; z-index: 6;">Edit item</a>`
+    //                             if (!data.is_admin) {{
+    //                                 admin_btn = '';
+    //                             }}
+    //                             $('#shop').append(`<div class="product col-lg-3 col-md-4 col-sm-6 col-12">
+	// 										<div class="grid-inner">
+	// 										${{admin_btn}}
+	// 										<div class="product-image">
+	// 										<a href="#" style="display: block; height: 350px;">
+	// 										<img src="${{item.image}}" alt="Item" style="height: 100%; width: 100%; object-fit: cover">
+	// 										</a>
+	// 										<div class="bg-overlay">
+	// 										<div class="bg-overlay-content align-items-end justify-content-between"
+	// 										data-hover-animate="fadeIn" data-hover-speed="400">
+	// 										<a href="include/ajax/shop-items.html" class="btn btn-primary"
+	// 										data-lightbox="ajax" onclick="setSelectedItem('${{item.id}}')">View Details</a>
+	// 										</div>
+	// 										<div class="bg-overlay-bg bg-transparent"></div>
+	// 										</div>
+	// 										</div>
+	// 										<div class="product-desc">
+	// 										<div class="product-title">
+	// 										<h3><a>${{item.title}}</a></h3>
+	// 										</div>
+	// 										<div class="product-price"><ins>\$${{item.price}}</ins></div>
+	// 										</div>
+	// 										</div>
+	// 										</div>`);
+    //                         }}
+    //                     }}
+    //                 }}
+    //             }});
+    //             break;
+    //         }} catch (e) {{
+    //         }}
+    //     }}
+    // }});
+</script>
+<script src="js/plugins.min.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="js/functions.js"></script>
+</body>
+</html>

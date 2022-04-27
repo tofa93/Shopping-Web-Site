@@ -1,0 +1,114 @@
+<div class="single-product shop-quick-view-ajax">
+
+    <div class="ajax-modal-title">
+        <h2 id="title" style="word-break:break-all;"></h2>
+    </div>
+
+    <div class="product modal-padding">
+
+        <div class="row gutter-40 col-mb-50">
+            <div class="col-md-6">
+                <div class="product-image">
+                    <div class="fslider" data-pagi="false">
+                        <div class="flexslider">
+                            <div class="slide">
+                                <a title="" style="display: block; height: 350px;">
+                                    <img id="image" alt="Pink Printed Dress"
+                                         style="height: 100%; width: 100%; object-fit: cover">
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 product-desc">
+                <div class="product-price">
+                    <ins id="price"></ins>
+                </div>
+                <div class="clear"></div>
+                <div class="line"></div>
+
+                <!-- Product Single - Quantity & Cart Button
+                                ============================================= -->
+                <div class="cart mb-0">
+                    <div class="quantity">
+                        <input type="button" value="-" class="minus">
+                        <input type="text" step="1" min="1" name="quantity" value="1" title="Qty" class="qty"
+                               size="4" onchange="check_int()" id="quantity"/>
+                        <input type="button" value="+" class="plus">
+                    </div>
+                    <button class="add-to-cart button m-0" id="add_to_cart">Add to cart</button>
+                </div><!-- Product Single - Quantity & Cart Button End -->
+
+                <div class="clear"></div>
+                <div class="line"></div>
+                <p id="description" style="word-break:break-all"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (typeof last_input === 'undefined' || last_input === null) {
+            let last_input = 1;
+        }
+
+        function check_int() {
+            const element = document.getElementById('quantity');
+            console.log('W');
+            if (isNaN(element.value)) {
+                element.value = last_input;
+            } else {
+                let value = parseFloat(element.value)
+                if (!Number.isInteger(value) || value < 1) {
+                    element.value = last_input;
+                } else {
+                    last_input = element.value;
+                }
+            }
+        }
+
+        cartbtn = document.getElementById('add_to_cart');
+        cartbtn.onclick = function () {
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                crossDomain: true,
+                url: `cartItem?item_id=${selectedItem}&amount=${document.getElementById('quantity').value}`,
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    console.log(data);
+                    if (!data.error) {
+                        cartbtn.innerHTML = "✅Added";
+                        setTimeout(function () {
+                            cartbtn.innerHTML = "Add to cart";
+                        }, 1500);
+                    } else {
+                        cartbtn.innerHTML = "❌Error";
+                        setTimeout(function () {
+                            cartbtn.innerHTML = "Add to cart";
+                        }, 1500);
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                dataType: 'json',
+                crossDomain: true,
+                url: "product?product_id=" + selectedItem,
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    console.log(data);
+                    if (!data.error) {
+                        document.getElementById('price').innerHTML = `NIS ${data.price}`;
+                        document.getElementById('description').innerHTML = data.description;
+                        document.getElementById('image').src = data.image;
+                        document.getElementById('title').innerHTML = data.title;
+                    }
+                }
+            });
+        });
+    </script>
+</div>

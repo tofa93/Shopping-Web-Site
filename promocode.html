@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/redeem-coupon.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Redeem promocode</title>
+</head>
+<body>
+<div class="container">
+    <div id="box">
+        <div class="coupon-card">
+            <img src="images/logo.jpg" alt="logo" class="logo">
+            <h3>Thank you for your order, here's your free coupon</h3>
+
+            <div class="coupon-row">
+                <span id="cpnCode">%s</span>
+                <span id="cpnBtn">COPY CODE</span>
+            </div>
+
+            <p>Use it for your next purchase</p>
+            <br>
+
+            <div class="wrapper">
+                <button onclick="window.location.href = 'cart'">
+                    USE IT
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    let cpnBtn = document.getElementById("cpnBtn");
+    let cpnCode = document.getElementById("cpnCode");
+
+    cpnBtn.onclick = function () {
+        navigator.clipboard.writeText(cpnCode.innerHTML)
+        cpnBtn.innerHTML = "✅COPIED";
+        setTimeout(function () {
+            cpnBtn.innerHTML = "COPY CODE";
+        }, 3000)
+    }
+</script>
+</body>
+</html>

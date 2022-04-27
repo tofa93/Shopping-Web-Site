@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
+            rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+
+    <!-- Bootstrap Select CSS -->
+    <link rel="stylesheet" href="css/components/bs-select.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Product</title>
+</head>
+
+<body class="stretched dark">
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper">
+
+    <header id="header" class="full-header">
+        <div id="header-wrap">
+            <div class="container">
+                <div class="header-row">
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="catalogue" class="standard-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                        <a href="catalogue" class="retina-logo" data-dark-logo="images/logo.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- <div class="header-misc">
+                        <div id="top-cart" class="header-misc-icon d-none d-sm-block">
+                            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span
+                                    class="top-cart-number">5</span></a>
+                        </div>#top-cart end
+                    </div> -->
+
+                    <div id="primary-menu-trigger">
+                        <svg class="svg-trigger" viewBox="0 0 100 100">
+                            <path
+                                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+                            </path>
+                            <path d="m 30,50 h 40"></path>
+                            <path
+                                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav class="primary-menu">
+                        <ul class="menu-container">
+                            <!-- <li class="menu-item">
+                                <a href="cart.html" id="top-cart-trigger"><i class="icon-line-bag"></i></a>
+                            </li> -->
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="points">
+                                    <div>Points</div>
+                                </a>
+                            </li>
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="promocodes">
+                                    <div>Coupons</div>
+                                </a>
+                            </li>
+                            <li class="menu-item mega-menu">
+                                <a class="menu-link" href="cart">
+                                    <div>Cart</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="catalogue">
+                                    <div>Catalogue</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="logout" class="button button-rounded si-twitter si-colored">Log
+                                    Out</a>
+                            </li>
+                        </ul>
+                    </nav><!-- #primary-menu end -->
+                </div>
+            </div>
+        </div>
+        <div class="header-wrap-clone"></div>
+    </header><!-- #header end -->
+
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Add / edit product</h1>
+        </div>
+    </section><!-- #page-title end -->
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap bg-dark">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h4 class="mb-0">Add / edit product</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="form-widget">
+
+                                    <div class="form-result"></div>
+
+                                    <div class="form-process">
+                                        <div class="css3-spinner">
+                                            <div class="css3-spinner-double-bounce1"></div>
+                                            <div class="css3-spinner-double-bounce2"></div>
+                                        </div>
+                                    </div>
+
+                                    <form class="mb-0" method="post" id="main-form">
+
+                                        <div class="row" id="main-row">
+
+                                            <div class="col-12 bottommargin-sm">
+                                                <label for="name-input">Name<small class="text-danger">*</small></label>
+                                                <input type="text" id="name-input" name="name" value=""
+                                                       class="form-control required" placeholder="Enter Item Name"
+                                                       maxlength="100" required/>
+                                            </div>
+
+                                            <div class="col-12 bottommargin-sm">
+                                                <label for="description-input">Description<small
+                                                        class="text-danger">*</small></label>
+                                                <textarea class="required form-control textarea-message"
+                                                          id="description-input" name="description" rows="6" cols="30"
+                                                          maxlength="3000" required></textarea>
+                                            </div>
+
+                                            <div class="col-12 bottommargin-sm">
+                                                <label for="tag-input">Category<small
+                                                        class="text-danger">*</small></label>
+                                                <select id="tag-input" name="tag" class="form-select valid">
+                                                    <option value="" disabled="">Select One</option>
+                                                </select>
+                                            </div>
+
+                                            <label for="price-input">Price<small class="text-danger">*</small></label>
+                                            <div class="input-group col-12 bottommargin-sm">
+                                                <span class="input-group-text">NIS</span>
+                                                <input id="price-input" name="price" class="form-control valid required"
+                                                       aria-label="Amount (to the nearest dollar)"
+                                                       placeholder="Enter product price" aria-invalid="false"
+                                                       type="text" onchange="check_int('price-input')" value="1"
+                                                       required><label
+                                                    class="error" for="price-input" style="display: none;"></label>
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+
+                                            <label for="points-input">Points<small class="text-danger">*</small></label>
+                                            <div class="input-group col-12 bottommargin-sm">
+                                                <input id="points-input" name="points"
+                                                       class="form-control valid required"
+                                                       aria-label="Amount"
+                                                       placeholder="Enter product points" aria-invalid="false"
+                                                       type="text" onchange="check_int('points-input')" value="0"
+                                                       required><label
+                                                    class="error" for="points-input" style="display: none;"></label>
+                                            </div>
+
+                                            <div class="col-12 bottommargin-sm" id="image-div">
+                                                <label for="image-input">Image<small
+                                                        class="text-danger">*</small></label>
+                                                <input type="url" id="image-input" name="image" value=""
+                                                       class="form-control required" placeholder="Enter image link"
+                                                       maxlength="100" required/>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <input type="submit" name="submit"
+                                                       class="btn btn-secondary w-100 btn-lg" value="Submit">
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- #content end -->
+    <!-- <div class="overlay">
+        <div class="overlay__inner">
+            <div class="overlay__content"><span class="spinner"></span></div>
+        </div>
+    </div> -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+        <!-- Copyrights
+        ============================================= -->
+        <div id="copyrights">
+            <div class="container">
+                <div class="row col-mb-30">
+                    <div class="col-md-6 text-center text-md-start">
+                        Copyrights &copy; 2022 All Rights Reserved.<br>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="clear"></div>
+                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i
+                            class="icon-headphones"></i> +1-11-6541-6369
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- JavaScripts
+============================================= -->
+<script src="js/jquery.js"></script>
+<!--<script src="js/plugins.min.js"></script>-->
+
+<script>
+    let last_input = {'points-input': 0, 'price-input': 1};
+
+    $("#main-form").submit(function (e) {
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        var form = $(this);
+        var actionUrl = form.attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: form.serialize(), // serializes the form's elements.
+            success: function (data) {
+                window.location.href = 'adminProduct?product_id=' + data.id;
+            },
+            error: function (data) {
+                return 0;
+            }
+        });
+
+    });
+
+    function check_int(element_id) {
+        const element = document.getElementById(element_id);
+        console.log('W');
+        if (isNaN(element.value)) {
+            element.value = last_input[element_id];
+        } else {
+            let value = parseFloat(element.value)
+            if (!Number.isInteger(value) || value < 1) {
+                element.value = last_input[element_id];
+            } else {
+                last_input[element_id] = element.value;
+            }
+        }
+    }
+
+    function deleteItem() {
+        $.ajax({
+            type: "DELETE",
+            dataType: 'json',
+            crossDomain: true,
+            url: "product?product_id=" + getParameterByName('product_id'),
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                window.location.href = '/';
+            }
+        });
+    }
+
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            crossDomain: true,
+            url: "categories",
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                for (category of data.item_list) {
+                    $('#tag-input').append("<option value='" + category.name + "'>" + category.name + "</option>");
+                }
+            }
+        });
+
+        let itemID = getParameterByName('product_id')
+        if (itemID) {
+            $.ajax({
+                type: "GET",
+                dataType: 'json',
+                crossDomain: true,
+                url: "product?product_id=" + itemID,
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    console.log(data);
+                    document.getElementById('name-input').value = data.title;
+                    document.getElementById('description-input').value = data.description;
+                    document.getElementById('price-input').value = data.price;
+                    document.getElementById('points-input').value = data.points;
+                    document.getElementById('image-input').value = data.image;
+                    $('#main-row').prepend(`<div class="col-12 bottommargin-sm">
+                                                <div style="text-align: center;">
+                                                    <img class="h-50 rounded" src="${data.image}" alt="Image">
+                                                </div>
+                                            </div><input type="hidden" id="product-id-input" value="${data.id}" name="product_id">`);
+                    let input = document.getElementById('tag-input');
+                    for (let i = 0; i < input.options.length; i++) {
+                        console.log(input.options[i].text);
+                        if (input.options[i].text === data.category) {
+                            input.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    if (getParameterByName('product_id')) {
+                    $('#image-div').after(`<div class="col-12 bottommargin-sm">
+                                                <a class="btn btn-danger w-100" onclick="deleteItem()">
+                                                    Delete item
+                                                </a>
+                                            </div><div class="col-12 bottommargin-sm">
+                                                <a class="btn btn-light w-100" href="adminProduct">
+                                                    Add a new item instead of editing
+                                                </a>
+                                            </div>`);
+                }
+                }
+            });
+        }
+    });
+</script>
+
+<!-- Footer Scripts
+============================================= -->
+
+<!-- Select-Boxes Plugin -->
+<!--<script src="js/components/select-boxes.js"></script>-->
+
+<!-- Bootstrap Select Plugin -->
+<!--<script src="js/components/bs-select.js"></script>-->
+
+<!-- Select-Splitter Plugin -->
+<!--<script src="js/components/selectsplitter.js"></script>-->
+
+<!--<script src="js/functions.js"></script>-->
+
+
+<!--<script src="js/app.js"></script>-->
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<div class="product col-lg-3 col-md-4 col-sm-6 col-12">
+    <div class="grid-inner">
+        {admin_btn}
+        <div class="product-image">
+            <a href="#" style="display: block; height: 350px;">
+                <img src="{image}" alt="Item" style="height: 100%; width: 100%; object-fit: cover">
+            </a>
+            <div class="bg-overlay">
+                <div class="bg-overlay-content align-items-end justify-content-between"
+                     data-hover-animate="fadeIn" data-hover-speed="400">
+                    <a href="include/ajax/shop-items.html" class="btn btn-primary"
+                       data-lightbox="ajax" onclick="setSelectedItem('{id}')">View Details</a>
+                </div>
+                <div class="bg-overlay-bg bg-transparent"></div>
+            </div>
+        </div>
+        <div class="product-desc">
+            <div class="product-title">
+                <h3><a>{title}</a></h3>
+            </div>
+            <div class="product-price">
+                <ins>NIS {price}</ins>
+            </div>
+        </div>
+    </div>
+</div>
